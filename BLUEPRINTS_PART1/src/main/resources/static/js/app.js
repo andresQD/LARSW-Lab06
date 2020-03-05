@@ -67,7 +67,7 @@ var logica = (function () {
           var y = Math.round(evt.clientY - ClientRect.top);
           
         /**ap.addblueprint(Nauthor, bp.name, x, y); **/
-        $("#mensaje").text("x: " + x + "y: " + y);
+        $("#mensaje").text("x: " + x.toFixed(2) + "y: " + y.toFixed(2));
        });
     };
 
