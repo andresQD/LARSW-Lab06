@@ -33,20 +33,33 @@ and open the template in the editor.
         </form>
         <hr>
         <h2><i id="authorname"></i> Blueprints</h2>
-        <table border="">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Puntos</th>
-                    <th>Open</th>
-                </tr>
-            </thead>
-            <tbody id="tabla">
-            </tbody>
-        </table>
-        <h2>Total user points: <i id="sumatotal"></i></h2>
-        <hr>
-        <h2><i id="ActualBp"></i></h2>
-        <canvas id="myCanvas" width="350" height="350" style="border:1px solid #000000;"></canvas>
+        <div>
+            <div style="float:left;width:50%">
+                <table border="">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Puntos</th>
+                            <th>Open</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla">
+                    </tbody>
+                </table>
+                <h2>Total user points: <i id="sumatotal"></i></h2>
+
+            </div>
+            <div style="float:left;width:50%">
+                <h2><i id="ActualBp"></i></h2>
+                <canvas id="myCanvas" width="350" height="350" style="border:1px solid #000000;"></canvas>  
+                <h2> <i id="mensaje"></i></h2> 
+            </div>
+
+
+
+        </div>
+
+
+
     </body>
 </html>

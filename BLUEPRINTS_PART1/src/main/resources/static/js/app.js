@@ -47,7 +47,7 @@ var logica = (function () {
     var generateCanvas = function(bp) {
       $("#ActualBp").text(bp.name);
       var canvas = document.getElementById("myCanvas");
-      var context = canvas.getContext("2d");
+      var context = canvas.getContext("2d");    
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.beginPath();
       var anterior;
@@ -58,9 +58,18 @@ var logica = (function () {
         } else {
           context.lineTo(point.x, point.y);
           context.stroke();
-        }
+        }       
       });
-    };	
+      canvas.addEventListener("click", function(evt) {
+        var ClientRect = canvas.getBoundingClientRect();
+       
+          var x = Math.round(evt.clientX - ClientRect.left);
+          var y = Math.round(evt.clientY - ClientRect.top);
+          
+        /**ap.addblueprint(Nauthor, bp.name, x, y); **/
+        $("#mensaje").text("x: " + x + "y: " + y);
+       });
+    };
 
     return {
         cambiar: cambiar,
