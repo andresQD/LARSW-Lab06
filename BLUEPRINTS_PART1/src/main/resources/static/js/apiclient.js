@@ -18,7 +18,7 @@ apic = (function () {
                 }
             });
         },
-		getBlueprintsByNameAndAuthor: function (author, name, callback) {
+	getBlueprintsByNameAndAuthor: function (author, name, callback) {
             $.ajax({
                 dataType: "json",
                 url: Url+author+'/'+name,
@@ -26,6 +26,53 @@ apic = (function () {
                     callback(data);
                 }
             });
+        },
+        PutBlueprint: function (author, name, nbp){
+            $.ajax({
+            url: Url+author+'/'+name,
+            type: 'PUT',
+            data: nbp,
+            contentType: "application/json"
+            });
+        },
+        
+        PostBlueprint: function (nbp){
+            $.ajax({
+            url: Url,
+            type: 'POST',
+            data: nbp,
+            contentType: "application/json"
+            });
+            
+            putPromise.then(
+            function () {
+                console.info("OK");
+            },
+            function () {
+                console.info("ERROR");
+            }
+        );
+
+        putPromise.then(blueprintGet);
+        },
+        
+        deleteBp : function(author, name){
+            $.ajax({
+            url: Url+author+'/'+name,
+            type: 'DELETE',
+            contentType: "application/json"
+            });
+            
+            deletePromise.then(
+            function () {
+                console.info('Delete OK');
+            },
+            function () {
+                console.info('Delete NOK');
+            }
+        );
+
+        return deletePromise;
         }
 
 

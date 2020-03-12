@@ -27,7 +27,7 @@ and open the template in the editor.
                     <input type="text" id="Author" required>
                 </p>
                 <p>
-                    <button id="button" type="button"  onclick="logica.cambiar(Author.value)">Get blueprints </button>
+                    <button id="getBP" type="button"  onclick="logica.cambiar(Author.value)">Get blueprints </button>
                 </p>
             </fieldset>
         </form>
@@ -50,9 +50,12 @@ and open the template in the editor.
 
             </div>
             <div style="float:left;width:50%">
+                <button id="createBP" type="button"  onclick="logica.createNewBluePrint()">Create new Blueprints</button>
                 <h2><i id="ActualBp"></i></h2>
                 <canvas id="myCanvas" width="350" height="350" style="border:1px solid #000000;"></canvas>  
-                <h2> <i id="mensaje"></i></h2> 
+                <h2> <i id="mensaje"></i></h2>
+                <button id="sv-upBP" type="button"  onclick="logica.actualizarBP()">Save/Update</button>
+                <button id="delBP" type="button"  onclick="logica.cambiar(Author.value)">Delete</button>
             </div>
 
 
